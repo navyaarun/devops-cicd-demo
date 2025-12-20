@@ -1,1 +1,1 @@
-print("A quick guide to CI/CD pipeline")
+print("A quick guide to CI/CD pipeline: devops-demo-cicd")
