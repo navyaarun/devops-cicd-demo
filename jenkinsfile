@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clone Code') {
+            steps {
+                echo 'Cloning source code from GitHub'
+                git 'https://github.com/navyaarun/devops-cicd-demo'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                echo 'Building Docker image'
+                sh 'docker build -t devops-demo-app:latest .'
+            }
+        }
+
+        stage('Run Container') {
+            steps {
+                echo 'Running Docker container'
+                sh 'docker run --rm devops-demo-app:latest'
+            }
+        }
+    }
+}
