@@ -6,21 +6,15 @@ pipeline {
         stage('Clone Code') {
             steps {
                 echo 'Cloning source code from GitHub'
-                git 'https://github.com/navyaarun/devops-cicd-demo'
+                git branch: 'main',
+                    url: 'https://github.com/navyaarun/devops-cicd-demo.git'
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Run Application') {
             steps {
-                echo 'Building Docker image'
-                sh 'docker build -t devops-demo-app:latest .'
-            }
-        }
-
-        stage('Run Container') {
-            steps {
-                echo 'Running Docker container'
-                sh 'docker run --rm devops-demo-app:latest'
+                echo 'Running Python application'
+                bat 'python app.py'
             }
         }
     }
