@@ -1,21 +1,23 @@
-pipeline {
-    agent any
+echo "Current directory: $(pwd)"
 
-    stages {
+// pipeline {
+//     agent any
 
-        stage('Clone Code') {
-            steps {
-                echo 'Cloning source code from GitHub'
-                git branch: 'main',
-                    url: 'https://github.com/navyaarun/devops-cicd-demo.git'
-            }
-        }
+//     stages {
 
-        stage('Run Application') {
-            steps {
-                echo 'Running Python application'
-                bat 'python app.py'
-            }
-        }
-    }
-}
+//         stage('Clone Code') {
+//             steps {
+//                 echo 'Cloning source code from GitHub'
+//                 git branch: 'main',
+//                     url: 'https://github.com/navyaarun/devops-cicd-demo.git'
+//             }
+//         }
+
+//         stage('Run Application') {
+//             steps {
+//                 echo 'Running Python application'
+//                 bat 'python app.py'
+//             }
+//         }
+//     }
+// }
