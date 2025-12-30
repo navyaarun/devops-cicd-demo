@@ -1,4 +1,16 @@
-echo "Current directory: $(pwd)"
+pipeline {
+  agent any
+  stages {
+    stage('Debug') {
+      steps {
+        sh '''
+          echo "Current directory: $(pwd)"
+        '''
+      }
+    }
+  }
+}
+
 
 // pipeline {
 //     agent any
